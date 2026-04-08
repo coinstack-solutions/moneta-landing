@@ -127,6 +127,33 @@ a {
   border-color: var(--accent);
 }
 
+.nav__btn {
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 7px 16px;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s;
+}
+
+.nav__btn--login {
+  color: var(--text-dim);
+}
+
+.nav__btn--login:hover {
+  color: var(--text-bright);
+}
+
+.nav__btn--register {
+  background: var(--gradient);
+  color: #fff;
+  font-weight: 600;
+}
+
+.nav__btn--register:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
 /* ===== Hero ===== */
 .hero {
   position: relative;
@@ -806,6 +833,12 @@ a {
   color: var(--text-bright);
 }
 
+.footer__by {
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
 .footer__copy {
   font-size: 0.825rem;
   color: var(--text-dim);
@@ -828,6 +861,11 @@ a {
 
   .nav__link {
     display: none;
+  }
+
+  .nav__btn {
+    font-size: 0.8rem;
+    padding: 6px 12px;
   }
 
   .hero {
