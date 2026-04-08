@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coinstack — Personal Finance Tracking</title>
+  <meta name="description" content="Coinstack — modern personal finance tracking. Accounts, transactions, categories, analytics, AI-powered insights." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="nav__inner container">
+      <a href="#" class="nav__logo">
+        <span class="nav__logo-icon">C</span>
+        <span>Coinstack</span>
+      </a>
+      <div class="nav__right">
+        <a href="#features" class="nav__link" data-i18n="nav.features">Features</a>
+        <a href="#screenshots" class="nav__link" data-i18n="nav.screenshots">Screenshots</a>
+        <a href="#pricing" class="nav__link" data-i18n="nav.pricing">Pricing</a>
+        <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+          <span class="lang-toggle__flag" id="langFlag">UA</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero__bg"></div>
+    <div class="container hero__inner">
+      <div class="hero__badge" data-i18n="hero.badge">Smart Finance Tracking</div>
+      <h1 class="hero__title">
+        <span data-i18n="hero.title1">Take Control of</span><br />
+        <span class="hero__title--gradient" data-i18n="hero.title2">Your Finances</span>
+      </h1>
+      <p class="hero__subtitle" data-i18n="hero.subtitle">
+        Coinstack helps you track accounts, transactions, and spending habits with powerful analytics and AI-powered insights. All for the price of a coffee.
+      </p>
+      <div class="hero__cta">
+        <a href="#pricing" class="btn btn--primary" data-i18n="hero.cta1">Start for $5/mo</a>
+        <a href="#screenshots" class="btn btn--outline" data-i18n="hero.cta2">See It in Action</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshots -->
+  <section class="screenshots" id="screenshots">
+    <div class="container">
+      <h2 class="section__title" data-i18n="screenshots.title">See It in Action</h2>
+      <p class="section__subtitle" data-i18n="screenshots.subtitle">A clean interface designed to give you full visibility into your finances.</p>
+
+      <div class="screenshots__carousel">
+        <!-- Dashboard mockup -->
+        <div class="mockup">
+          <div class="mockup__header">
+            <div class="mockup__dots">
+              <span></span><span></span><span></span>
+            </div>
+            <span class="mockup__tab" data-i18n="screenshots.tab.dashboard">Dashboard</span>
+          </div>
+          <div class="mockup__body">
+            <div class="mockup__topbar">
+              <span class="mockup__greeting" data-i18n="screenshots.greeting">Good morning, Pavlo</span>
+              <span class="mockup__date">April 2026</span>
+            </div>
+            <div class="mockup__cards">
+              <div class="mockup__stat-card mockup__stat-card--balance">
+                <span class="mockup__stat-label" data-i18n="screenshots.totalBalance">Total Balance</span>
+                <span class="mockup__stat-value">48 050.00 <small>UAH</small></span>
+                <span class="mockup__stat-change mockup__stat-change--up">+12.4%</span>
+              </div>
+              <div class="mockup__stat-card">
+                <span class="mockup__stat-label" data-i18n="screenshots.income">Income</span>
+                <span class="mockup__stat-value mockup__stat-value--green">+32 000 <small>UAH</small></span>
+              </div>
+              <div class="mockup__stat-card">
+                <span class="mockup__stat-label" data-i18n="screenshots.expenses">Expenses</span>
+                <span class="mockup__stat-value mockup__stat-value--red">-18 420 <small>UAH</small></span>
+              </div>
+            </div>
+            <div class="mockup__chart-section">
+              <span class="mockup__chart-title" data-i18n="screenshots.spendingChart">Monthly Spending</span>
+              <div class="mockup__bars">
+                <div class="mockup__bar-group"><div class="mockup__bar" style="height:45%"></div><span>Jan</span></div>
+                <div class="mockup__bar-group"><div class="mockup__bar" style="height:62%"></div><span>Feb</span></div>
+                <div class="mockup__bar-group"><div class="mockup__bar" style="height:38%"></div><span>Mar</span></div>
+                <div class="mockup__bar-group"><div class="mockup__bar mockup__bar--active" style="height:55%"></div><span>Apr</span></div>
+                <div class="mockup__bar-group"><div class="mockup__bar mockup__bar--dim" style="height:30%"></div><span>May</span></div>
+                <div class="mockup__bar-group"><div class="mockup__bar mockup__bar--dim" style="height:20%"></div><span>Jun</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Analytics mockup -->
+        <div class="mockup">
+          <div class="mockup__header">
+            <div class="mockup__dots">
+              <span></span><span></span><span></span>
+            </div>
+            <span class="mockup__tab" data-i18n="screenshots.tab.analytics">Analytics</span>
+          </div>
+          <div class="mockup__body">
+            <div class="mockup__topbar">
+              <span class="mockup__greeting" data-i18n="screenshots.categoryBreakdown">Category Breakdown</span>
+              <span class="mockup__date" data-i18n="screenshots.thisMonth">This Month</span>
+            </div>
+            <div class="mockup__donut-section">
+              <div class="mockup__donut">
+                <svg viewBox="0 0 36 36">
+                  <circle cx="18" cy="18" r="15.915" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="3"/>
+                  <circle cx="18" cy="18" r="15.915" fill="none" stroke="#6366f1" stroke-width="3" stroke-dasharray="35 65" stroke-dashoffset="25"/>
+                  <circle cx="18" cy="18" r="15.915" fill="none" stroke="#a855f7" stroke-width="3" stroke-dasharray="25 75" stroke-dashoffset="90"/>
+                  <circle cx="18" cy="18" r="15.915" fill="none" stroke="#ec4899" stroke-width="3" stroke-dasharray="18 82" stroke-dashoffset="65"/>
+                  <circle cx="18" cy="18" r="15.915" fill="none" stroke="#22c55e" stroke-width="3" stroke-dasharray="12 88" stroke-dashoffset="47"/>
+                  <circle cx="18" cy="18" r="15.915" fill="none" stroke="#eab308" stroke-width="3" stroke-dasharray="10 90" stroke-dashoffset="35"/>
+                </svg>
+                <span class="mockup__donut-center">18 420<br/><small>UAH</small></span>
+              </div>
+              <div class="mockup__legend">
+                <div class="mockup__legend-item"><span class="mockup__legend-dot" style="background:#6366f1"></span><span data-i18n="screenshots.cat.housing">Housing</span><span class="mockup__legend-val">6 450 UAH</span></div>
+                <div class="mockup__legend-item"><span class="mockup__legend-dot" style="background:#a855f7"></span><span data-i18n="screenshots.cat.food">Food & Groceries</span><span class="mockup__legend-val">4 610 UAH</span></div>
+                <div class="mockup__legend-item"><span class="mockup__legend-dot" style="background:#ec4899"></span><span data-i18n="screenshots.cat.transport">Transport</span><span class="mockup__legend-val">3 320 UAH</span></div>
+                <div class="mockup__legend-item"><span class="mockup__legend-dot" style="background:#22c55e"></span><span data-i18n="screenshots.cat.entertainment">Entertainment</span><span class="mockup__legend-val">2 210 UAH</span></div>
+                <div class="mockup__legend-item"><span class="mockup__legend-dot" style="background:#eab308"></span><span data-i18n="screenshots.cat.other">Other</span><span class="mockup__legend-val">1 830 UAH</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Transactions mockup -->
+        <div class="mockup">
+          <div class="mockup__header">
+            <div class="mockup__dots">
+              <span></span><span></span><span></span>
+            </div>
+            <span class="mockup__tab" data-i18n="screenshots.tab.transactions">Transactions</span>
+          </div>
+          <div class="mockup__body">
+            <div class="mockup__topbar">
+              <span class="mockup__greeting" data-i18n="screenshots.recentTransactions">Recent Transactions</span>
+              <span class="mockup__filter-pill" data-i18n="screenshots.allAccounts">All Accounts</span>
+            </div>
+            <div class="mockup__tx-list">
+              <div class="mockup__tx">
+                <div class="mockup__tx-icon mockup__tx-icon--green">+</div>
+                <div class="mockup__tx-info">
+                  <span class="mockup__tx-name" data-i18n="screenshots.tx.salary">Salary</span>
+                  <span class="mockup__tx-cat" data-i18n="screenshots.tx.salarycat">Income / Main Checking</span>
+                </div>
+                <span class="mockup__tx-amount mockup__tx-amount--green">+32 000 UAH</span>
+              </div>
+              <div class="mockup__tx">
+                <div class="mockup__tx-icon mockup__tx-icon--red">-</div>
+                <div class="mockup__tx-info">
+                  <span class="mockup__tx-name">Silpo</span>
+                  <span class="mockup__tx-cat" data-i18n="screenshots.tx.groceries">Food & Groceries / Card</span>
+                </div>
+                <span class="mockup__tx-amount mockup__tx-amount--red">-1 245 UAH</span>
+              </div>
+              <div class="mockup__tx">
+                <div class="mockup__tx-icon mockup__tx-icon--blue">&#8644;</div>
+                <div class="mockup__tx-info">
+                  <span class="mockup__tx-name" data-i18n="screenshots.tx.transfer">Transfer to Savings</span>
+                  <span class="mockup__tx-cat" data-i18n="screenshots.tx.transfercat">Checking &rarr; Savings</span>
+                </div>
+                <span class="mockup__tx-amount">-5 000 UAH</span>
+              </div>
+              <div class="mockup__tx">
+                <div class="mockup__tx-icon mockup__tx-icon--red">-</div>
+                <div class="mockup__tx-info">
+                  <span class="mockup__tx-name">Bolt</span>
+                  <span class="mockup__tx-cat" data-i18n="screenshots.tx.transport">Transport / Card</span>
+                </div>
+                <span class="mockup__tx-amount mockup__tx-amount--red">-189 UAH</span>
+              </div>
+              <div class="mockup__tx">
+                <div class="mockup__tx-icon mockup__tx-icon--red">-</div>
+                <div class="mockup__tx-info">
+                  <span class="mockup__tx-name">Netflix</span>
+                  <span class="mockup__tx-cat" data-i18n="screenshots.tx.entertainment">Entertainment / Card</span>
+                </div>
+                <span class="mockup__tx-amount mockup__tx-amount--red">-399 UAH</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features" id="features">
+    <div class="container">
+      <h2 class="section__title" data-i18n="features.title">Everything You Need</h2>
+      <p class="section__subtitle" data-i18n="features.subtitle">Powerful tools to understand and manage your money.</p>
+      <div class="features__grid">
+
+        <div class="card">
+          <div class="card__icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 10h20"/></svg>
+          </div>
+          <h3 class="card__title" data-i18n="features.accounts.title">Multi-Account</h3>
+          <p class="card__text" data-i18n="features.accounts.text">Checking, savings, cash, credit cards, investments — with auto-computed balances updated in real time.</p>
+        </div>
+
+        <div class="card">
+          <div class="card__icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3 class="card__title" data-i18n="features.transactions.title">Transactions</h3>
+          <p class="card__text" data-i18n="features.transactions.text">Income, expenses, and transfers with full filtering, pagination, and automatic balance recalculation.</p>
+        </div>
+
+        <div class="card">
+          <div class="card__icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+          </div>
+          <h3 class="card__title" data-i18n="features.categories.title">Categories</h3>
+          <p class="card__text" data-i18n="features.categories.text">System defaults + custom categories with subcategory support. Organize your finances your way.</p>
+        </div>
+
+        <div class="card">
+          <div class="card__icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <h3 class="card__title" data-i18n="features.analytics.title">Analytics</h3>
+          <p class="card__text" data-i18n="features.analytics.text">Spending summaries, category breakdowns, and trend analysis to understand your financial habits.</p>
+        </div>
+
+        <div class="card">
+          <div class="card__icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          </div>
+          <h3 class="card__title" data-i18n="features.mcp.title">AI-Powered (MCP)</h3>
+          <p class="card__text" data-i18n="features.mcp.text">Built-in AI assistant lets you manage finances through natural language. Ask questions, get insights.</p>
+        </div>
+
+        <div class="card">
+          <div class="card__icon">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="card__title" data-i18n="features.security.title">Bank-Level Security</h3>
+          <p class="card__text" data-i18n="features.security.text">JWT authentication, encrypted data, OAuth support. Your financial data stays private and protected.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="pricing" id="pricing">
+    <div class="container">
+      <h2 class="section__title" data-i18n="pricing.title">Simple Pricing</h2>
+      <p class="section__subtitle" data-i18n="pricing.subtitle">One plan, everything included. No hidden fees.</p>
+      <div class="pricing__grid">
+
+        <div class="pricing__card pricing__card--free">
+          <div class="pricing__card-header">
+            <h3 class="pricing__plan" data-i18n="pricing.free.name">Free</h3>
+            <div class="pricing__price">
+              <span class="pricing__amount">$0</span>
+            </div>
+            <p class="pricing__desc" data-i18n="pricing.free.desc">Try Coinstack with basic features</p>
+          </div>
+          <ul class="pricing__features">
+            <li data-i18n="pricing.free.f1">2 accounts</li>
+            <li data-i18n="pricing.free.f2">100 transactions/month</li>
+            <li data-i18n="pricing.free.f3">Basic categories</li>
+            <li data-i18n="pricing.free.f4">Monthly summary</li>
+            <li class="pricing__features--disabled" data-i18n="pricing.free.f5">Analytics & trends</li>
+            <li class="pricing__features--disabled" data-i18n="pricing.free.f6">AI assistant</li>
+          </ul>
+          <a href="#" class="btn btn--outline pricing__btn" data-i18n="pricing.free.cta">Get Started Free</a>
+        </div>
+
+        <div class="pricing__card pricing__card--pro">
+          <div class="pricing__popular" data-i18n="pricing.popular">Most Popular</div>
+          <div class="pricing__card-header">
+            <h3 class="pricing__plan" data-i18n="pricing.pro.name">Pro</h3>
+            <div class="pricing__price">
+              <span class="pricing__amount" id="priceAmount">$5</span>
+              <span class="pricing__period" data-i18n="pricing.period">/month</span>
+            </div>
+            <p class="pricing__price-alt" id="priceAlt" data-i18n="pricing.pro.alt">or 200 UAH/month</p>
+            <p class="pricing__desc" data-i18n="pricing.pro.desc">Full power for serious tracking</p>
+          </div>
+          <ul class="pricing__features">
+            <li data-i18n="pricing.pro.f1">Unlimited accounts</li>
+            <li data-i18n="pricing.pro.f2">Unlimited transactions</li>
+            <li data-i18n="pricing.pro.f3">Custom categories & subcategories</li>
+            <li data-i18n="pricing.pro.f4">Full analytics & trends</li>
+            <li data-i18n="pricing.pro.f5">AI assistant (MCP)</li>
+            <li data-i18n="pricing.pro.f6">API access</li>
+            <li data-i18n="pricing.pro.f7">Priority support</li>
+          </ul>
+          <a href="#" class="btn btn--primary pricing__btn" data-i18n="pricing.pro.cta">Start Pro</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container cta__inner">
+      <h2 class="cta__title" data-i18n="cta.title">Ready to Take Control?</h2>
+      <p class="cta__text" data-i18n="cta.text">Join Coinstack today and finally understand where your money goes.</p>
+      <div class="hero__cta">
+        <a href="#pricing" class="btn btn--primary" data-i18n="cta.start">Get Started</a>
+        <a href="https://github.com" class="btn btn--outline" data-i18n="cta.github">View on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__left">
+        <span class="nav__logo-icon">C</span>
+        <span>Coinstack</span>
+      </div>
+      <div class="footer__right">
+        <span class="footer__copy" data-i18n="footer.copy">&copy; 2026 Coinstack. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
