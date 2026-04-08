@@ -92,7 +92,19 @@ a {
 .nav__right {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 32px;
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .nav__link {
@@ -859,7 +871,7 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .nav__link {
+  .nav__links {
     display: none;
   }
 
