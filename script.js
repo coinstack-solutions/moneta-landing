@@ -79,6 +79,7 @@ const translations = {
     "cta.text": "Join Moneta today and finally understand where your money goes.",
     "cta.start": "Get Started",
     "cta.github": "View on GitHub",
+    "footer.privacy": "Privacy Policy",
     "footer.copy": "\u00a9 2026 Coinstack. All rights reserved."
   },
   uk: {
@@ -161,6 +162,7 @@ const translations = {
     "cta.text": "\u041f\u0440\u0438\u0454\u0434\u043d\u0443\u0439\u0442\u0435\u0441\u044c \u0434\u043e Moneta \u0441\u044c\u043e\u0433\u043e\u0434\u043d\u0456 \u0456 \u043d\u0430\u0440\u0435\u0448\u0442\u0456 \u0437\u0440\u043e\u0437\u0443\u043c\u0456\u0439\u0442\u0435, \u043a\u0443\u0434\u0438 \u0439\u0434\u0443\u0442\u044c \u0432\u0430\u0448\u0456 \u0433\u0440\u043e\u0448\u0456.",
     "cta.start": "\u041f\u043e\u0447\u0430\u0442\u0438",
     "cta.github": "\u041d\u0430 GitHub",
+    "footer.privacy": "Політика конфіденційності",
     "footer.copy": "\u00a9 2026 Coinstack. \u0412\u0441\u0456 \u043f\u0440\u0430\u0432\u0430 \u0437\u0430\u0445\u0438\u0449\u0435\u043d\u0456."
   }
 };

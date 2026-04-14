@@ -851,6 +851,22 @@ a {
   color: var(--text-dim);
 }
 
+.footer__right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer__link {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  transition: color 0.2s;
+}
+
+.footer__link:hover {
+  color: var(--accent-light);
+}
+
 .footer__copy {
   font-size: 0.825rem;
   color: var(--text-dim);
