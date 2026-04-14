@@ -80,6 +80,7 @@ const translations = {
     "cta.start": "Get Started",
     "cta.github": "View on GitHub",
     "footer.privacy": "Privacy Policy",
+    "footer.terms": "Terms of Service",
     "footer.copy": "\u00a9 2026 Coinstack. All rights reserved."
   },
   uk: {
@@ -163,6 +164,7 @@ const translations = {
     "cta.start": "\u041f\u043e\u0447\u0430\u0442\u0438",
     "cta.github": "\u041d\u0430 GitHub",
     "footer.privacy": "Політика конфіденційності",
+    "footer.terms": "Умови використання",
     "footer.copy": "\u00a9 2026 Coinstack. \u0412\u0441\u0456 \u043f\u0440\u0430\u0432\u0430 \u0437\u0430\u0445\u0438\u0449\u0435\u043d\u0456."
   }
 };
