@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MCP Server Documentation — Moneta by Coinstack</title>
+  <meta name="description" content="Documentation for the Moneta MCP server — connect your AI assistant to your personal finance data." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    .docs {
+      padding: 120px 0 80px;
+    }
+    .docs h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--text-bright);
+      margin-bottom: 8px;
+    }
+    .docs .docs__subtitle {
+      color: var(--text-dim);
+      font-size: 1rem;
+      margin-bottom: 48px;
+    }
+    .docs h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-bright);
+      margin-top: 40px;
+      margin-bottom: 12px;
+    }
+    .docs h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-bright);
+      margin-top: 24px;
+      margin-bottom: 8px;
+    }
+    .docs p,
+    .docs li {
+      color: var(--text);
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+    .docs ul, .docs ol {
+      padding-left: 24px;
+      margin-bottom: 16px;
+    }
+    .docs li {
+      margin-bottom: 6px;
+    }
+    .docs a {
+      color: var(--accent-light);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .docs a:hover {
+      color: var(--accent);
+    }
+    .docs code {
+      background: rgba(255,255,255,0.08);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+    .docs pre {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      overflow-x: auto;
+      margin: 12px 0 20px;
+    }
+    .docs pre code {
+      background: none;
+      padding: 0;
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+    .docs table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 24px;
+    }
+    .docs th,
+    .docs td {
+      text-align: left;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+    .docs th {
+      background: var(--bg-card);
+      color: var(--text-bright);
+      font-weight: 600;
+    }
+    .docs td {
+      color: var(--text);
+    }
+    .docs td code {
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="nav__inner container">
+      <a href="/" class="nav__logo">
+        <span class="nav__logo-icon">M</span>
+        <span>Moneta</span>
+      </a>
+      <div class="nav__right">
+        <div class="nav__links">
+          <a href="/#features" class="nav__link">Features</a>
+          <a href="/#pricing" class="nav__link">Pricing</a>
+        </div>
+        <div class="nav__actions">
+          <a href="https://app.coinstack.cloud/login" class="nav__btn nav__btn--login">Log In</a>
+          <a href="https://app.coinstack.cloud/register" class="nav__btn nav__btn--register">Sign Up</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="docs">
+    <div class="container">
+      <h1>Moneta MCP Server</h1>
+      <p class="docs__subtitle">Connect your AI assistant to your personal finance data.</p>
+
+      <h2>What is Moneta?</h2>
+      <p>Moneta is a personal finance tracking app that lets you manage accounts, record transactions, set budgets, and analyze spending. The Moneta MCP server allows AI assistants like Claude, ChatGPT, and Gemini to interact with your financial data through natural language.</p>
+      <p>Moneta is a <strong>budgeting and record-keeping tool</strong>. It records entries in your personal ledger. It does not connect to banks, transfer money, or execute financial transactions of any kind.</p>
+
+      <h2>Getting Started</h2>
+
+      <h3>Claude (Web &amp; Desktop)</h3>
+      <ol>
+        <li>Go to <strong>Settings &rarr; Connectors &rarr; Add custom connector</strong></li>
+        <li>Paste the server URL: <code>https://mcp.coinstack.cloud/mcp</code></li>
+        <li>Complete the OAuth login with your Moneta account</li>
+        <li>Start asking questions about your finances</li>
+      </ol>
+
+      <h3>Claude Code</h3>
+      <p>Add to your MCP settings:</p>
+      <pre><code>{
+  "mcpServers": {
+    "moneta": {
+      "type": "streamable-http",
+      "url": "https://mcp.coinstack.cloud/mcp"
+    }
+  }
+}</code></pre>
+
+      <h2>Server Endpoints</h2>
+      <table>
+        <tr>
+          <th>Endpoint</th>
+          <th>Transport</th>
+          <th>Purpose</th>
+        </tr>
+        <tr>
+          <td><code>https://mcp.coinstack.cloud/mcp</code></td>
+          <td>Streamable HTTP</td>
+          <td>Primary endpoint</td>
+        </tr>
+        <tr>
+          <td><code>https://mcp.coinstack.cloud/sse</code></td>
+          <td>SSE</td>
+          <td>Fallback for SSE-only clients</td>
+        </tr>
+      </table>
+
+      <h2>Authentication</h2>
+      <p>Moneta uses <strong>OAuth 2.1</strong> with PKCE and dynamic client registration. When you connect via an AI assistant, the OAuth flow is handled automatically:</p>
+      <ol>
+        <li>The AI client registers itself via <code>/oauth/register</code></li>
+        <li>You are redirected to the Moneta login page</li>
+        <li>After login, you authorize the connector</li>
+        <li>The AI assistant receives a JWT access token for subsequent requests</li>
+      </ol>
+      <p>Discovery endpoints:</p>
+      <ul>
+        <li><code>/.well-known/oauth-authorization-server</code> &mdash; OAuth metadata</li>
+        <li><code>/.well-known/oauth-protected-resource</code> &mdash; resource metadata</li>
+        <li><code>/.well-known/mcp.json</code> &mdash; tool manifest</li>
+      </ul>
+
+      <h2>Available Tools (18)</h2>
+
+      <h3>Read-only</h3>
+      <table>
+        <tr><th>Tool</th><th>Description</th></tr>
+        <tr><td><code>list_accounts</code></td><td>List all financial accounts with current balances</td></tr>
+        <tr><td><code>get_balance</code></td><td>Get balance for one or all accounts, with multi-currency conversion</td></tr>
+        <tr><td><code>list_categories</code></td><td>List available income and expense categories</td></tr>
+        <tr><td><code>list_transactions</code></td><td>List transactions with filters (account, category, type, date range)</td></tr>
+        <tr><td><code>get_spending_summary</code></td><td>Get spending totals and per-category breakdown for a period</td></tr>
+        <tr><td><code>get_budget_status</code></td><td>Compare planned budgets to actual spending for a month</td></tr>
+        <tr><td><code>check_budget_alerts</code></td><td>Find categories that are over or approaching budget limits</td></tr>
+        <tr><td><code>list_my_clients</code></td><td>List clients (for financial advisors)</td></tr>
+      </table>
+
+      <h3>Mutating</h3>
+      <table>
+        <tr><th>Tool</th><th>Description</th></tr>
+        <tr><td><code>add_transaction</code></td><td>Record a new income, expense, or transfer</td></tr>
+        <tr><td><code>create_account</code></td><td>Create a new financial account</td></tr>
+        <tr><td><code>create_category</code></td><td>Create a custom transaction category</td></tr>
+        <tr><td><code>set_budget</code></td><td>Set or update a monthly budget for a category</td></tr>
+        <tr><td><code>update_account</code></td><td>Update account name, type, or status</td></tr>
+        <tr><td><code>update_transaction</code></td><td>Update an existing transaction</td></tr>
+        <tr><td><code>update_category</code></td><td>Rename a custom category</td></tr>
+      </table>
+
+      <h3>Destructive</h3>
+      <table>
+        <tr><th>Tool</th><th>Description</th></tr>
+        <tr><td><code>delete_account</code></td><td>Permanently delete an account</td></tr>
+        <tr><td><code>delete_transaction</code></td><td>Permanently delete a transaction and reverse its balance effect</td></tr>
+        <tr><td><code>delete_category</code></td><td>Permanently delete a custom category</td></tr>
+      </table>
+
+      <h2>Usage Examples</h2>
+
+      <h3>Check your balances</h3>
+      <pre><code>"What are my account balances?"
+&rarr; calls list_accounts
+&rarr; returns all accounts with names, types, currencies, and balances</code></pre>
+
+      <h3>Track spending</h3>
+      <pre><code>"How much did I spend on food this month?"
+&rarr; calls get_spending_summary
+&rarr; returns total expenses with category breakdown</code></pre>
+
+      <h3>Log an expense</h3>
+      <pre><code>"I spent $45 at Chipotle today from my checking account"
+&rarr; calls list_categories, then add_transaction
+&rarr; records $45 expense in Food &amp; Dining from Checking</code></pre>
+
+      <h3>Check budgets</h3>
+      <pre><code>"Am I over budget on anything?"
+&rarr; calls check_budget_alerts
+&rarr; lists categories exceeding or approaching their monthly limit</code></pre>
+
+      <h3>Set a budget</h3>
+      <pre><code>"Set my entertainment budget to $250 for May"
+&rarr; calls list_categories, then set_budget
+&rarr; confirms Entertainment budget updated to $250 for May 2026</code></pre>
+
+      <h2>Multi-Currency Support</h2>
+      <p>Moneta supports 10 currencies: USD, EUR, GBP, UAH, PLN, CZK, CHF, CAD, AUD, JPY. Exchange rates are fetched from the National Bank of Ukraine and cached for 1 hour. Balances can be viewed in any supported currency.</p>
+
+      <h2>Troubleshooting</h2>
+      <ul>
+        <li><strong>OAuth login fails:</strong> Make sure you have an active Moneta account at <a href="https://app.coinstack.cloud/register">app.coinstack.cloud</a>.</li>
+        <li><strong>Tool returns an error:</strong> Check that your access token hasn't expired. Reconnect the connector to refresh it.</li>
+        <li><strong>Missing data:</strong> Moneta only shows data you've entered. It does not sync with banks or import transactions automatically.</li>
+      </ul>
+
+      <h2>Support</h2>
+      <p>For questions or issues, contact us at <a href="mailto:support@coinstack.cloud">support@coinstack.cloud</a>.</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__left">
+        <span class="nav__logo-icon">M</span>
+        <span>Moneta</span>
+        <span class="footer__by">by Coinstack</span>
+      </div>
+      <div class="footer__right">
+        <a href="mailto:support@coinstack.cloud" class="footer__link">Support</a>
+        <a href="/privacy.html" class="footer__link">Privacy Policy</a>
+        <a href="/terms.html" class="footer__link">Terms of Service</a>
+        <span class="footer__copy">&copy; 2026 Coinstack. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
