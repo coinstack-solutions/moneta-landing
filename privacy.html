@@ -107,7 +107,7 @@
   <main class="legal">
     <div class="container">
       <h1>Privacy Policy</h1>
-      <p class="legal__updated">Last updated: April 14, 2026</p>
+      <p class="legal__updated">Last updated: April 18, 2026</p>
 
       <p>Moneta ("we", "us", "our") is a personal finance tracking service operated by Coinstack. This Privacy Policy describes how we collect, use, store, and protect your information when you use the Moneta web application at <a href="https://app.coinstack.cloud">app.coinstack.cloud</a> and the Moneta MCP server at <a href="https://mcp.coinstack.cloud">mcp.coinstack.cloud</a> (collectively, the "Service").</p>
 
@@ -210,8 +210,18 @@
           <td>Currency exchange rates</td>
           <td>None — we only fetch published rates</td>
         </tr>
+        <tr>
+          <td>Sentry</td>
+          <td>Error tracking and performance monitoring</td>
+          <td>Error details, request metadata, user ID and email (no financial data)</td>
+        </tr>
+        <tr>
+          <td>Mixpanel</td>
+          <td>Product analytics (feature usage, engagement)</td>
+          <td>User ID, email, event names (e.g. "transaction_created"), event metadata (e.g. transaction type). No financial amounts, descriptions, or account details are sent.</td>
+        </tr>
       </table>
-      <p>We do <strong>not</strong> use any third-party analytics, advertising, or error-tracking services.</p>
+      <p>We use Sentry for error tracking and Mixpanel for product analytics to improve the Service. These services receive only technical and usage data — <strong>no financial amounts, transaction descriptions, account names, or budget details</strong> are shared with them. We do <strong>not</strong> use any advertising or data-brokering services.</p>
 
       <h2>5. Data Storage and Security</h2>
       <ul>
