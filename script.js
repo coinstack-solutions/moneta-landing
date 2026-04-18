@@ -205,3 +205,12 @@ const saved = localStorage.getItem("coinstack-lang");
 if (saved && saved !== currentLang) {
   setLanguage(saved);
 }
+
+// Append Mixpanel distinct_id to app links for cross-domain identity linking
+document.addEventListener("click", (e) => {
+  const link = e.target.closest('a[href*="app.coinstack.cloud"]');
+  if (!link || typeof mixpanel === "undefined" || !mixpanel.get_distinct_id) return;
+  const url = new URL(link.href);
+  url.searchParams.set("mp_id", mixpanel.get_distinct_id());
+  link.href = url.toString();
+});
